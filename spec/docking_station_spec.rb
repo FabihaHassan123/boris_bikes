@@ -10,6 +10,10 @@ require "docking_station"
       it "return a working instance of the bike class" do
         expect(subject.release_bike.working?).to eq true
       end
+
+      it "raises an error if user tries to release_bike when there are no bikes" do
+        expect {subject.release_bike}.to raise_error("No bikes available")
+      end
     end
 
     describe "#dock" do

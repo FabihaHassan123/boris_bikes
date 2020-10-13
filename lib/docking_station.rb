@@ -8,7 +8,11 @@ class DockingStation
   end
   
   def release_bike
-    Bike.new
+    if @bikes.length <= 0
+      raise("No bikes available")
+    else
+      Bike.new
+    end
   end
 
   def dock(bike)
