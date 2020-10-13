@@ -22,5 +22,11 @@ require "docking_station"
         subject.dock(bike)
         expect(subject.bikes.include?(bike)).to eq(true)
       end
+      it "raises an error if docking_station is at capacity" do
+        bike1 = Bike.new
+        subject.dock(bike1)
+        bike2 = Bike.new
+        expect {subject.dock(bike2)}.to raise_error("Docking Station is at capacity")
+      end
     end
   end
