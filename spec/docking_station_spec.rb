@@ -4,10 +4,11 @@ require "docking_station"
 
     describe "#release_bike" do
       it "return true to release the bike" do
-      
-        actual_value = subject.release_bike
-        expected_value = true
-        expect(actual_value).to eq expected_value
+        expect(subject).to respond_to(:release_bike)
+      end
+
+      it "return a working instance of the bike class" do
+        expect(subject.release_bike.working?).to eq true
       end
 
     end
