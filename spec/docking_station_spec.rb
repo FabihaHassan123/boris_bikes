@@ -4,12 +4,14 @@ require "docking_station"
 
   describe DockingStation do
 
-    let(:bike) {double :bike}
+    # let(:bike) {double :bike}
 
-    before(:each) do
-      allow(bike).to receive(:working?).and_return(true)
-      allow(bike).to receive(:working=).and_return(true)
-    end
+    # before(:each) do
+    #   allow(bike).to receive(:working?).and_return(true)
+    #   allow(bike).to receive(:working=).and_return(true)
+    # end
+
+    let(:bike) {double(:working? => true, :working= => true)}
 
     it "has a capacity equal to 20 by default" do
       expect(subject.capacity).to eq(20)

@@ -15,7 +15,6 @@ class DockingStation
       raise("No bikes available")
     else
       @bikes.each do |bike|
-        p bike
         if bike.working?
           return bike
         end
